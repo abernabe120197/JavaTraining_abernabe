@@ -1,6 +1,7 @@
 package com.bootcamp.springboot.Config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,6 +13,7 @@ public class DbConfig {
     private String username;
     private String password;
 
+    @Bean("test")
     public String getServer() {
         return server;
     }

@@ -1,42 +1,38 @@
 package com.bootcamp.springboot.Model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name = "Todo")
-public class TodoModel {
+@Table(name = "Roles")
+public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String roleName;
     private String description;
-;
 
-    public TodoModel(){}
+    public Role(){}
 
-    public TodoModel(long id, String name, String description, Date creationDate, Date schedule) {
+    public Role(Long id, String roleName, String description){
         this.id = id;
-        this.name = name;
+        this.roleName = roleName;
         this.description = description;
-
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Long getId() {
         return id;
     }
-
-    public String getName() {
-        return name;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     public String getDescription() {
@@ -46,5 +42,4 @@ public class TodoModel {
     public void setDescription(String description) {
         this.description = description;
     }
-
 }
